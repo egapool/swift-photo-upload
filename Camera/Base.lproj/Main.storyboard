@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-oG-pXS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-oG-pXS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="433"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-1j-qGe">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -34,16 +34,29 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-xZ-44r">
+                                <rect key="frame" x="122" y="474" width="126" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="6FJ-h6-qBQ"/>
+                                    <constraint firstAttribute="height" constant="85" id="F7b-c9-UcT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="takeIt2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M4C-Sb-fcJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Heq-oG-pXS" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="9d6-6d-lbv"/>
-                            <constraint firstItem="Heq-oG-pXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AAc-TU-8E6"/>
-                            <constraint firstAttribute="trailing" secondItem="Heq-oG-pXS" secondAttribute="trailing" id="Hto-u9-WJF"/>
-                            <constraint firstItem="Heq-oG-pXS" firstAttribute="trailing" secondItem="5Qc-1j-qGe" secondAttribute="trailing" id="RVG-YC-3B6"/>
-                            <constraint firstItem="Heq-oG-pXS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Tfn-iN-HfK"/>
-                            <constraint firstItem="5Qc-1j-qGe" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ecE-Um-9qx"/>
-                            <constraint firstItem="Heq-oG-pXS" firstAttribute="leading" secondItem="5Qc-1j-qGe" secondAttribute="leading" id="tHY-gN-S6X"/>
+                            <constraint firstItem="Heq-oG-pXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2l6-SZ-ET2"/>
+                            <constraint firstItem="Heq-oG-pXS" firstAttribute="leading" secondItem="5Qc-1j-qGe" secondAttribute="leading" id="JBi-GY-crw"/>
+                            <constraint firstItem="IDI-xZ-44r" firstAttribute="top" secondItem="Heq-oG-pXS" secondAttribute="bottom" constant="41" id="X6p-ct-PJd"/>
+                            <constraint firstItem="Heq-oG-pXS" firstAttribute="trailing" secondItem="5Qc-1j-qGe" secondAttribute="trailing" id="aEW-Q5-xZC"/>
+                            <constraint firstItem="Heq-oG-pXS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="atW-yH-iuR"/>
+                            <constraint firstAttribute="trailing" secondItem="Heq-oG-pXS" secondAttribute="trailing" id="cjs-oz-vTU"/>
+                            <constraint firstItem="5Qc-1j-qGe" firstAttribute="top" secondItem="IDI-xZ-44r" secondAttribute="bottom" constant="64" id="vRj-1B-cto"/>
+                            <constraint firstItem="IDI-xZ-44r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="122" id="wmj-G9-8US"/>
+                            <constraint firstItem="5Qc-1j-qGe" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="z23-0W-f8b"/>
                         </constraints>
                     </view>
                     <connections>
