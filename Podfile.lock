@@ -1,12 +1,25 @@
 PODS:
   - Alamofire (4.4.0)
+  - Fusuma (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - Fusuma (from `git@github.com:ytakzk/Fusuma.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  Fusuma:
+    :branch: master
+    :git: git@github.com:ytakzk/Fusuma.git
+
+CHECKOUT OPTIONS:
+  Fusuma:
+    :commit: 420a8ba68f14183a219be5d83987067928ff484a
+    :git: git@github.com:ytakzk/Fusuma.git
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Fusuma: 7f7de5a4ac55fcaf98cf6f37982c540716fee549
 
-PODFILE CHECKSUM: 6ba83416283bec42ea1d61ec90966f5a94227586
+PODFILE CHECKSUM: 997122fd7d3f8c262b206ba30d74408cbd362e2a
 
 COCOAPODS: 1.2.1

@@ -8,34 +8,66 @@
 
 import Alamofire
 import UIKit
+import Fusuma
 
-
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FusumaDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func launchCamera(_ sender: UIBarButtonItem) {
         
-        let camera = UIImagePickerControllerSourceType.savedPhotosAlbum
-        if UIImagePickerController.isSourceTypeAvailable(camera) {
-            let picker = UIImagePickerController()
-            picker.sourceType = camera
-            picker.delegate = self
-            self.present(picker, animated:true)
-        }
+//        let camera = UIImagePickerControllerSourceType.savedPhotosAlbum
+//        if UIImagePickerController.isSourceTypeAvailable(camera) {
+//            let picker = UIImagePickerController()
+//            picker.sourceType = camera
+//            picker.delegate = self
+//            self.present(picker, animated:true)
+//        }
+        
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+//        fusuma.hasVideo = true // If you want to let the users allow to use video.
+        self.present(fusuma, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    // MARK: FusumaDelegate Protocol
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
+        switch source {
+        case .camera:
+            print("Image captured from Camera")
+        case .library:
+            print("Image selected from Camera Roll")
+        default:
+            print("Image selected")
+        }
         
-        self.dismiss(animated: true)
-        
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        self.uploadFile(image)
-        
-        self.imageView.image = image
-//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        
+        imageView.image = image
     }
+    
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
+        
+        print("Called just after a video has been selected.")
+    }
+    
+    // When camera roll is not authorized, this method is called.
+    func fusumaCameraRollUnauthorized() {
+        
+        print("Camera roll unauthorized")
+    }
+    
+    func fusumaDismissedWithImage(_ image: UIImage, source: FusumaMode) {
+        print("Called just after FusumaViewController is dismissed.")
+        self.uploadFile(image)
+    }
+    
+    func fusumaClosed() {
+        print("Called fusuma closed.")
+    }
+    
+    func fusumaWillClosed() {
+        print("Called fusuma will closed.")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
